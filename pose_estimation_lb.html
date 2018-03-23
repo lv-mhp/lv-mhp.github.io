@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>MHP:Multi-Human Parsing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Bootstrap -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<link type="text/css" href="/static/bootstrap.css" rel="stylesheet" >
+
+
+<link rel="stylesheet" type="text/css" href="/static/DataTables/datatables.min.css"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+
+
+  </head>
+  <body>
+    
+<body>
+<div class="row clearfix" style="margin-top: 30px;">
+    <div class="col-md-1" column></div>
+
+    <div id="header">
+        <div class="col-md-10" column>
+            <div class="logo">
+                <img width="250" height="80" src="/static/images/logo/mhplogo.PNG" alt='' />
+            </div>
+        </div>
+        <div class="col-md-1" colulmn>
+            <!--<span>
+                <div class="topAD">
+                  <button class="h4" type="button" class="btn btn-default" href="">Login</button>
+                </div>
+            </span>-->
+        </div>
+    </div>
+</div>
+
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                     <span class="sr-only"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                 </button>
+                <!--<a class="navbar-brand" href="#">导航</a>-->
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" style="margin-right: 100px;">
+                    <li><a class="h4" href="/">Home</a></li>
+                    <li><a class="h4" href="/team">Team</a></li>
+                    <li><a class="h4" href="/dataset">Dataset</a></li>
+                    <li class="dropdown">
+                        <a href ="/human_parsing_task" class="h4" class="dropdown-toggle" data-toggle="dropdown" >
+                            Tasks
+                            <b class="h4" class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="h4" href="/human_parsing_task">Multi-Human Parsing</a></li>
+                            <li><a class="h4" href="/pose_estimation_task">Multi-Human Pose Estimation</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href ="/human_parsing_lb" class="h4" class="dropdown-toggle" data-toggle="dropdown">
+                            Leaderboard
+                            <b class="h4" class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="h4" href="/human_parsing_lb">Multi-Human Parsing</a></li>
+                            <li><a class="h4" href="/pose_estimation_lb">Multi-Human Pose Estimation</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="h4" href ="/evaluate">Submission</a></li>
+                </ul>
+                <!--<form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input class="form-control" type="text" />
+                    </div> <button type="submit" class="btn btn-default">搜索</button>
+                </form>-->
+            </div>
+
+        </nav>
+    </div>
+</div>
+</body>
+
+    
+<div class="row clearfix">
+    <div class="col-md-2 column">
+    </div>
+    <div class="container">
+        <div class="col-md-8 column">
+            <div class="articleContent">
+                <div id="contentTxt">
+                    <div class="container">
+                      
+<div class="container">
+	<div class="row clearfix">
+        <div class="col-md-1 column">
+        </div>
+        <div class="col-md-10 column">
+          <div class="articleContent" style="margin-bottom: 20px;">
+                <h1 class="title">
+                    <strong>
+                       Overview
+                    </strong>
+                </h1>
+                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                  We offer a benchmark suite together with an evaluation server, such that authors can upload their results and get a ranking. We offer a dataset that contains more than 50000 pictures, including 30462 images for training set, 10000 images for validation set and 10000 images for test set. If you would like to submit your results, please register, login, and follow the instructions on our submission page.
+                </p>
+                <p style="color: #777; font-size: 18px;"><a style="font-weight: bold;">Note:</a> We only display results with relatively detailed descriptions.  </p>
+
+                <h1 class="title">
+                    <strong>
+                       Multi-Human Pose Estimation
+                    </strong>
+                </h1>
+                <h2>Metrics</h2>
+                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                    Followed <a href="http://human-pose.mpi-inf.mpg.de/">MPII</a>, we use <a style="font-weight: normal;">PCKh</a> evaluation measure with Person-Centric (PC) annotations.
+                </p>
+          </div>
+
+
+          <div class="articleContent"style="color: #777; font-size: 18px;" >
+            <table class="table-benchmarks" id="table-benchmarks-gk" width="100%" style="width:100%">
+                <thead>
+                    <tr>
+                        <th class="dt-head-center">Method</th>
+                                        <th class="dt-head-center"> </th>
+                                        <th class="dt-head-center">  </th>
+                                        <th class="dt-head-center">PCKh</th>
+                                        <th class="dt-head-center">   </th>
+                                        <th class="dt-head-center">Details</th>
+                        <th class="dt-head-center">Abbreviation</th>
+                        <th class="dt-head-center">Submit Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                    <tr>
+                            <td class="dt-body-center">Stacked Hourglass</td>
+
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">69.600</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   71.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   78.600   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   71.700   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   69.700   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   54.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   70.500   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   71.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   72.800   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   69.600   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">Stacked Hourglass Networks for Human Pose Estimation, Alejandro Newell, Kaiyu Yang, and Jia Deng, ECCV 2016</td>
+                                            <td class="dt-body-center">A &quot;stacked hourglass&quot; network based on the successive steps of pooling and upsampling that are done to produce a final set of predictions. The evaluation used the released pre-trained model without fine-tuning on LIP training set.</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-03-15 12:00:00</td>
+                        </tr>
+                                                    <tr>
+                            <td class="dt-body-center">NTHU-Pose</td>
+
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">87.400</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   94.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   93.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   89.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   86.500   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   75.700   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   85.500   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   85.700   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   91.000   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   87.400   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">Self Adversarial Training for Human Pose Estimation, Chia-Jung Chou, Jui-Ting Chien, and Hwann-Tzong Chen, National Tsing Hua University</td>
+                                            <td class="dt-body-center">We adapt Boundary Equilibrium GAN as our learning model in which we set up two stacked hourglass networks, one as the generator and the other as the discriminator. The generator is used as a pose estimator after the training is done. The discriminator distinguishes ground-truth heatmaps from generated ones, and back-propagates the adversarial loss to the generator. This process enables the generator to learn the plausible human body configurations. The entire model is trained from scratch using only the LIP training data.</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-06-02 03:06:07</td>
+                        </tr>
+                                                    <tr>
+                            <td class="dt-body-center">Pyramid Stream Network (Multi-Model)</td>
+                    <!--  -->
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">82.100</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   91.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   88.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   82.200   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   79.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   70.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   80.800   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   81.200   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   85.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   82.100   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">NIE Xuecheng (NUS), ZHAO Jian (NUS & NUDT), XIAO Huaxin (NUS & NUDT), CHEN Yunpeng (NUS), LI Jianshu (NUS), YAN Shuicheng (NUS & Qihoo360 AI Institute) (The first 3 authors are with equal contributions.)</td>
+                                            <td class="dt-body-center">Pyramid Stream Network (PSN) is composed of a stream of pyramid units, which predict body joint confidence maps at different resolutions. The major adavantages of PSN lie in two aspects: (1) Exploiting contextual information to iteratively refine the confidence maps by learning implicit spatial relationships between different body joints; (2) Combining high-resolution, semantically weak features with low-resolution, semantically strong features via a top-down pathway and lateral connections.</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-06-03 08:03:30</td>
+                        </tr>
+                                                    <tr>
+                            <td class="dt-body-center">Hybrid Pose Matchine	</td>
+                    <!--  -->
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">77.200</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   71.700   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   87.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   82.300   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   78.200   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   69.200   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   77.000   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   73.500   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   79.800   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   77.200   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">Yue Liao*[1], Ruihe Qian*[1], Si Liu[1], Yao Sun[1] and Yinglu Liu[2],Yanli Li[2],Junjun Xiong[2] [1]IIE,CAS [2]Beijing Samsung Telecom R&D Center</td>
+                                            <td class="dt-body-center">We have proposed a hybrid method of inferring the pose of humans. We first extract human bounding boxes from the pose ground truth. Then we train a Faster R-CNN [1] based human detector to infer the human box in testing phase. Then Convolutional Pose Machines with Part Affinity Fields [2] and Stacked Hourglass Networks [3] are applied to estimate the poses. And the results are merged. No extra data are used in our method. [1]Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks.Shaoqing Ren, Kaiming He,et al.TPAMI2016 [2] Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields.Cao Z, Simon T, Wei S E, et al.CVPR2017. [3]Stacked Hourglass Networks for Human Pose Estimation. Newell et al., POCV 2016</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-06-04 13:38:59</td>
+                        </tr>
+                                                    <tr>
+                            <td class="dt-body-center">BUPTMM-POSE</td>
+                    <!--  -->
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">80.200</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   90.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   87.300   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   81.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   78.800   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   68.500   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   75.300   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   75.800   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   84.800   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   80.200   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">Wu Liu, Huadong Ma, Peng Cheng, Cheng Zhang, Haoran Lv, Xiongxiong Dong</td>
+                                            <td class="dt-body-center">We revised and finetuned Stacked Hourglass [1] and Convolutional Pose Machines [2] on LIP training set, then combined them with different fusion strategies.
+                                                [1] Stacked Hourglass Networks for Human Pose Estimation, Alejandro Newell, Kaiyu Yang, and Jia Deng, ECCV 2016;
+                                                [2] Convolutional pose machines, Shih-En Wei, Varun Ramakrishna, Takeo Kanade, Yaser Sheikh, CVPR 2016.</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-06-04 14:53:20</td>
+                        </tr>
+                                                    <tr>
+                            <td class="dt-body-center">Tightly Connected ResNet-101</td>
+                    <!--  -->
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">80.800</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   93.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   88.000   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   82.500   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   79.700   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   68.300   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   75.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   74.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   86.000   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   80.800   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">Tightly Connected ResNet-101Tightly Connected ResNet-101</td>
+                                            <td class="dt-body-center">Tightly Connected ResNet-101Tightly Connected ResNet-101Tightly Connected ResNet-101Tightly Connected ResNet-101Tightly Connected ResNet-101</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-06-04 15:24:55</td>
+                        </tr>
+                                                    <tr>
+                            <td class="dt-body-center">Tightly Connected ResNet-101Tightly Connected ResNet-101</td>
+                    <!--  -->
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">81.000</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   93.200   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   87.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   82.300   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   79.800   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   69.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   75.500   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   75.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   85.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   81.000   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">Tightly Connected ResNet-101Tightly Connected ResNet-101Tightly Connected ResNet-101</td>
+                                            <td class="dt-body-center">Tightly Connected ResNet-101Tightly Connected ResNet-101Tightly Connected ResNet-101Tightly Connected ResNet-101</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-06-04 15:29:10</td>
+                        </tr>
+                                                    <tr>
+                            <td class="dt-body-center">cs_ft-2</td>
+                    <!--  -->
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">87.000</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   94.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   92.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   88.300   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   86.000   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   76.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   84.700   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   85.000   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   90.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   87.000   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">Zhuowan Li, Chenxu Luo</td>
+                                            <td class="dt-body-center">8 stack hourglass pre-trained on MPII, fine-tuned on LIP</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-07-05 00:00:00</td>
+                        </tr>
+                                                    <tr>
+                            <td class="dt-body-center">cs_train-1_s3</td>
+
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">83.500</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   92.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   89.800   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   85.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   82.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   72.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   79.200   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   79.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   87.700   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   83.500   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">Zhuowan Li, Chenxu Luo</td>
+                                            <td class="dt-body-center">3 stack hourglass trained on LIP from scratch</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-07-05 15:00:00</td>
+                        </tr>
+                                                    <tr>
+                            <td class="dt-body-center">hg_cs_ft_1</td>
+
+                            <td class="dt-body-center"> </td>
+                            <td class="dt-body-center"> </td>
+                                                <td class="dt-body-center">85.700</td>
+                            <td class="dt-body-center"> </td>
+
+                            <td class="dt-body-center dt-details">
+                                <a>Details</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                                                        <tr>
+                                                                            <th>Head</th>
+                                                                            <th>Shoulder</th>
+                                                                            <th>Elbow</th>
+                                                                            <th>Wrist</th>
+                                                                            <th>Hip</th>
+                                                                            <th>Knee</th>
+                                                                            <th>Ankle</th>
+                                                                            <th>UBody</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                        <tr>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   93.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   91.500   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   87.200   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   84.600   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   74.900   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   82.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   83.100   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   89.400   </td>
+                                                                            <td class="dt-body-center" style="white-space: pre-wrap;">   85.700   </td>
+                                                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+                            <td class="dt-body-center dt-details">
+                                <a>Abbreviation</a>
+                                <div class="hidden-wrapper" style="display:none">
+                                                                <table>
+                                        <tr>
+                                            <th class="dt-head-center">Contributors</th>
+                                            <th class="dt-head-center">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-body-center">Zhuowan Li, Chenxu Luo</td>
+                                            <td class="dt-body-center">3 stack hourglass initialized by pre-trained 8 stack hourglass on MPII, fine-tuned on LIP</td>
+                                        </tr>
+                                    </table>
+                                                            </div>
+                            </td>
+
+                            <td class="dt-body-center">2017-07-05 17:00:00</td>
+                        </tr>
+                </tbody>
+	        </table>
+          </div>
+        </div>
+        <div class="col-md-1 column">
+        </div>
+    </div>
+</div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+
+<div class="container">
+    <hr width=100% size=50% color=#888888 style="border:solid;"/>
+    <div class="col-md-2 column">
+    </div>
+    <div class="col-md-8 column">
+        <div class="footer" style="white-space: normal;">
+            <img  style="margin-right:50px;"  src="/static/images/logo/nuslogo.png"/>
+            <img   src="/static/images/logo/lvlogo.png"/>
+        </div>
+        </p>
+    </div>
+    <div class="col-md-2 column">
+    </div>
+</div>
+
+
+    
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/jquery.min.js"></script>
+<script type="text/javascript" src="/static/jquery.js"></script>
+<script type="text/javascript" src="/static/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/static/DataTables/datatables.min.js"></script>
+
+<script>
+$(document).ready(function() {
+	var table_gk = $("#table-benchmarks-gk").DataTable({
+		'autoWidth': false,
+		'order': [[3, 'desc']]
+	});
+
+	// $("#table-benchmarks-abbr").DataTable({
+	// 	'autoWidth': false
+	// });
+
+	$('#table-benchmarks-gk tbody').on('click', 'td.dt-details', function () {
+        var tr = $(this).closest('tr');
+        var row = table_gk.row( tr );
+
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            var child_data = $(this).find('.hidden-wrapper').html();
+            row.child( child_data ).show();
+            tr.addClass('shown');
+        }
+    } );
+});
+</script>
+
+
+  </body>
+</html>
