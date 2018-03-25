@@ -10,7 +10,25 @@
 
 <link type="text/css" href="/static/bootstrap.css" rel="stylesheet" >
 
+<style type="text/css">
+            html,body{
+                width:100%;
+                height:100%;
+                margin:0;
+                padding:0;
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+            .id{
+                width:100%;
+                height:100%;
+                background:lime;
+                margin:0 auto;
+            }
+        </style>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
@@ -21,7 +39,7 @@
   <body>
     
 <body>
-<div class="row clearfix" style="margin-top: 30px;">
+<div class="row clearfix" style="margin-top: 2em;">
     <div class="col-md-1" column></div>
 
     <div id="header">
@@ -54,7 +72,7 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right" style="margin-right: 100px;">
+                <ul class="nav navbar-nav navbar-right" style="margin-right: 6em;">
                     <li><a class="h4" href="/">Home</a></li>
                     <li><a class="h4" href="/team">Team</a></li>
                     <li><a class="h4" href="/dataset">Dataset</a></li>
@@ -94,30 +112,30 @@
 
     
 <div class="row clearfix">
-    <div class="col-md-2 column">
-    </div>
-    <div class="container">
-        <div class="col-md-8 column">
+    <!--<div class="col-md-2 column">
+    </div>-->
+    <div class="container-fluid">
+        <!--<div class="col-md-8 column">-->
             <div class="articleContent">
                 <div id="contentTxt">
-                    <div class="container">
+                    <div class="container-fluid">
                       
-<div class="container">
+<div class="container-fluid">
 	<div class="row clearfix">
-		<div class="col-md-1 column">
+		<div class="col-md-2 column">
 		</div>
-		<div class="col-md-10 column">
+		<div class="col-md-8 column">
 			<div class="articleContent">
 				<h1 class="title">
                     <strong>
                        Statistics
                     </strong>
 				</h1>
-                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">
                     The <a style="font-weight: normal;">MHP v1.0</a> dataset contains 4,980 images, each with at least two persons (average is 3). We randomly choose 980 images and their corresponding annotations as the testing set. The rest form a training set of 3,000 images and a validation set of 1,000 images. For each instance, 18 semantic categories are defined and annotated except for the "background" category, i.e. “hat”, “hair”, “sunglasses”, “upper clothes”, “skirt”, “pants”, “dress”, “belt”, “left shoe”, “right shoe”, “face”, “left leg”, “right leg”, “left arm”, “right arm”, “bag”, “scarf” and “torso skin”. Each instance has a complete set of annotations whenever the corresponding category appears in the current image.
                 </p>
 
-                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">
                     The <a style="font-weight: normal;">MHP v2.0</a> dataset contains 25,848 images, each with at least two persons (average is 3). We randomly choose 5,000 images and their corresponding annotations as the testing set. The rest form a training set of 15,848 images and a validation set of 5,000 images. For each instance, 58 semantic categories are defined and annotated except for the "background" category, i.e. “cap/hat", “helmet", “face", “hair", “left-
 arm", “right-arm", “left-hand", “right-hand", “protector", “bikini/bra",
 “jacket/windbreaker/hoodie", “t-shirt", “polo-shirt", “sweater", “sin-
@@ -135,35 +153,35 @@ highheel", “right-highheel", “left-sandal", “right-sandal", “left-leg",
                        Download
                     </strong>
                 </h1>
-                <p id="contentTxt" style="color: #777; font-size: 18px;">
-                    Download: The MHP v1.0 dataset is available at <a style="color:red;font-weight:bold; font-size: 18px;" href="https://drive.google.com/file/d/1hTS8QJBuGdcppFAr_bvW2tsD9hW_ptr5/view">google drive</a>
-                    and <a style="color:red;font-weight:bold; font-size: 18px;" href="https://pan.baidu.com/s/1mjTtWqW">baidu drive</a> (password: cmtp).
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">
+                    Download: The MHP v1.0 dataset is available at <a style="color:red;font-weight:bold; font-size: 1.3em;" href="https://drive.google.com/file/d/1hTS8QJBuGdcppFAr_bvW2tsD9hW_ptr5/view">google drive</a>
+                    and <a style="color:red;font-weight:bold; font-size: 1.3em;" href="https://pan.baidu.com/s/1mjTtWqW">baidu drive</a> (password: cmtp).
                 </p>
             </div>
 
 		</div>
-		<div class="col-md-1 column">
+		<div class="col-md-2 column">
 		</div>
 	</div>
 </div>
 
                     </div>
                 </div>
-            </div>
+            <!--</div>-->
 
         </div>
     </div>
-    <div class="col-md-2 column">
-    </div>
+    <!--<div class="col-md-2 column">
+    </div>-->
 </div>
 
-<div class="container">
-    <hr width=100% size=50% color=#888888 style="border:solid;"/>
+<div class="container-fluid">
+    <hr width=100% size=10% color=#888888 style="border:solid;"/>
     <div class="col-md-2 column">
     </div>
     <div class="col-md-8 column">
         <div class="footer" style="white-space: normal;">
-            <img  style="margin-right:50px;"  src="/static/images/logo/nuslogo.png"/>
+            <img  style="margin-right:3em;"  src="/static/images/logo/nuslogo.png"/>
             <img   src="/static/images/logo/lvlogo.png"/>
         </div>
         </p>
@@ -180,6 +198,7 @@ highheel", “right-highheel", “left-sandal", “right-sandal", “left-leg",
 <script type="text/javascript" src="/static/jquery.min.js"></script>
 <script type="text/javascript" src="/static/jquery.js"></script>
 <script type="text/javascript" src="/static/bootstrap.min.js"></script>
+
 
   </body>
 </html>

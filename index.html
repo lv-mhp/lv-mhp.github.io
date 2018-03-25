@@ -10,7 +10,25 @@
 
 <link type="text/css" href="/static/bootstrap.css" rel="stylesheet" >
 
+<style type="text/css">
+            html,body{
+                width:100%;
+                height:100%;
+                margin:0;
+                padding:0;
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+            .id{
+                width:100%;
+                height:100%;
+                background:lime;
+                margin:0 auto;
+            }
+        </style>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
@@ -21,7 +39,7 @@
   <body>
     
 <body>
-<div class="row clearfix" style="margin-top: 30px;">
+<div class="row clearfix" style="margin-top: 2em;">
     <div class="col-md-1" column></div>
 
     <div id="header">
@@ -54,7 +72,7 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right" style="margin-right: 100px;">
+                <ul class="nav navbar-nav navbar-right" style="margin-right: 6em;">
                     <li><a class="h4" href="/">Home</a></li>
                     <li><a class="h4" href="/team">Team</a></li>
                     <li><a class="h4" href="/dataset">Dataset</a></li>
@@ -94,20 +112,20 @@
 
     
 <div class="row clearfix">
-    <div class="col-md-2 column">
-    </div>
-    <div class="container">
-        <div class="col-md-8 column">
+    <!--<div class="col-md-2 column">
+    </div>-->
+    <div class="container-fluid">
+        <!--<div class="col-md-8 column">-->
             <div class="articleContent">
                 <div id="contentTxt">
-                    <div class="container">
+                    <div class="container-fluid">
                       
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row clearfix">
-		<div class="col-md-1 column">
+		<div class="col-md-2 column">
 		</div>
-		<div class="col-md-10 column">
+		<div class="col-md-8 column">
 			<div class="carousel slide" id="carousel-961589">
 				<ol class="carousel-indicators">
 					<li class="active" data-slide-to="0" data-target="#carousel-961589">
@@ -133,16 +151,16 @@
 				</div> <a class="left carousel-control" href="#carousel-961589" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-961589" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div>
-		<div class="col-md-1 column">
+		<div class="col-md-2 column">
 		</div>
 	</div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row clearfix">
-		<div class="col-md-1 column">
+		<div class="col-md-2 column">
 		</div>
-		<div class="col-md-10 column">
+		<div class="col-md-8 column">
 			<div class="articleContent">
 				<h1 class="title">
                     <strong>
@@ -152,28 +170,28 @@
                 <h2 class="title">
                     Originality
                 </h2>
-                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">
                     To our best knowledge, we are the first to propose a new Multi-Human Parsing task, corresponding datasets and baseline methods.
                 </p>
 
                 <h2 class="title">
                     Task Definition
                 </h2>
-                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">
                     Multi-Human Parsing refers to partitioning a crowd scene image into semantically consistent regions belonging to the body parts or clothes items while differentiating different identities, such that each pixel in the image is assigned a semantic part label, as well as the identity it belongs to. A lot of higher-level applications can be founded upon Multi-Human Parsing, such as group behavior analysis, person re-identification, image editing, video surveillance, autonomous driving and virtual reality.
                 </p>
 
                 <h2 class="title">
                     Motivation
                 </h2>
-                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">
                     The Multi-Human Parsing project of Learning and Vision (LV) Group, National University of Singapore (NUS) is proposed to push the frontiers of fine-grained visual understanding of humans in crowd scene. Multi-Human Parsing is significantly different from traditional well-defined object recognition tasks, such as object detection, which only provides coarse-level predictions of object locations (bounding boxes); instance segmentation, which only predicts the instance-level mask without any detailed information on body parts and fashion categories; human parsing, which operates on category-level pixel-wise prediction without differentiating different identities. In real world scenario, the setting of multiple persons with interactions are more realistic and usual. Thus a task, corresponding datasets and baseline methods to consider both the fine-grained semantic information of each individual person and the relationships and interactions of the whole group of people are highly desired.
                 </p>
                 <h2 class="title">
                     Citation
                 </h2>
-                <p id="contentTxt" style="color: #777; font-size: 18px;">Please consider citing relevant papers:</p>
-                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">Please consider citing relevant papers:</p>
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">
                     <a href="https://arxiv.org/abs/1705.07206">"Multi-Human Parsing in the Wild"</a>&nbsp;&nbsp;
                     <!--<a href="https://github.com/Engineering-Course/LIP_SSL" style="color:red;font-weight:bold;">[Code]</a>-->
                     <br/>
@@ -181,7 +199,7 @@
                     <br/>
                     <span>arXiv:1705.07206 (* indicates equal contribution)</span>
                 </p>
-                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">
                     <a href="https://arxiv.org/abs/1705.07422">"Generative Partition Networks for Multi-Person Pose Estimation”</a>
                     <br/>
                     <span>Xuecheng Nie, Jiashi Feng, Junliang Xing, Shuicheng Yan;</span>
@@ -197,7 +215,7 @@
                         </strong>
                     </h1>
 
-                    <ul id="contentTxt" style="color: #777; font-size: 18px;">
+                    <ul id="contentTxt" style="color: #777; font-size: 1.3em;">
                         <li>
                             April 03, 2018 Welcome to our CVPR'18 workshop on Visual Understanding of Humans in Crowd Scene and the 2nd Look Into Person (LIP) Challenge. <a  style="color: blue; text-decoration: underline;"></a>
                         </li>
@@ -226,36 +244,37 @@
                     </strong>
                 </h1>
 
-                <p id="contentTxt" style="color: #777; font-size: 18px;">
+                <p id="contentTxt" style="color: #777; font-size: 1.3em;">
                     The MHP v1.0 and v2.0 datasets are made freely available to academic and non-academic entities for non-commercial purposes such as academic research, teaching, scientific publications, or personal experimentation. Permission is granted to use the data given that you agree to our license terms.
                 </p>
 
             </div>
 
 		</div>
-		<div class="col-md-1 column">
+        <div class="col-md-2 column">
 		</div>
+
 	</div>
 </div>
 
 
                     </div>
                 </div>
-            </div>
+            <!--</div>-->
 
         </div>
     </div>
-    <div class="col-md-2 column">
-    </div>
+    <!--<div class="col-md-2 column">
+    </div>-->
 </div>
 
-<div class="container">
-    <hr width=100% size=50% color=#888888 style="border:solid;"/>
+<div class="container-fluid">
+    <hr width=100% size=10% color=#888888 style="border:solid;"/>
     <div class="col-md-2 column">
     </div>
     <div class="col-md-8 column">
         <div class="footer" style="white-space: normal;">
-            <img  style="margin-right:50px;"  src="/static/images/logo/nuslogo.png"/>
+            <img  style="margin-right:3em;"  src="/static/images/logo/nuslogo.png"/>
             <img   src="/static/images/logo/lvlogo.png"/>
         </div>
         </p>
@@ -272,6 +291,7 @@
 <script type="text/javascript" src="/static/jquery.min.js"></script>
 <script type="text/javascript" src="/static/jquery.js"></script>
 <script type="text/javascript" src="/static/bootstrap.min.js"></script>
+
 
   </body>
 </html>
